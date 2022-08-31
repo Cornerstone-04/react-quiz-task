@@ -8,7 +8,7 @@
             "c": "Facebook", 
             "d":"Alibaba"
         },
-        "answer": "c"
+        "answer": "Facebook"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
             "c": "London", 
             "d":"Bristol"
         },
-        "answer": "b"
+        "answer": "Sheffield"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
             "c": "Zinc", 
             "d": "Titanium"
         },
-        "answer": "a"
+        "answer": "Calcium"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
             "c": "Calabar", 
             "d":"Abuja"
         },
-        "answer": "d"
+        "answer": "Abuja"
     },
     {
         "id": 5,
@@ -52,6 +52,6 @@
             "c": "Buhari", 
             "d":"None of the above"
         },
-        "answer": "d"
+        "answer": "None of the above"
     }
 ]

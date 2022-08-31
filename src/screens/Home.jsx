@@ -4,7 +4,6 @@ import "../styles/home.css";
 import toast, { Toaster } from "react-hot-toast";
 
 const Home = () => {
-  const { id } = useParams();
 
   const navigate = useNavigate();
   const [fullName, setFullName] = React.useState("");
@@ -17,7 +16,7 @@ const Home = () => {
       store.push(fullName);
       localStorage.setItem("store", JSON.stringify(store));
 
-      navigate(`/${id}`);
+      navigate("/quiz-test/1");
     } else {
       toast.error("Please input your full name");
     }

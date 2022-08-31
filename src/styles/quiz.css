@@ -6,34 +6,48 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap:10px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.quiz div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
+.quiz div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
 }
-p{
+p {
   font-size: 24px;
 }
 
-ul.options{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 16px;
+ul.options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
 }
 
-button{
+.select {
   background: transparent;
   color: #fff;
   border: none;
   outline: none;
   font-size: 16px;
+  padding: 10px;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.active {
+cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  transition: 0.2s linear;
+  background: #fff;
+  color: #16161d;
 }
