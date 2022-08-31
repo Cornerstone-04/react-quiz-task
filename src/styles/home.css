@@ -1,0 +1,48 @@
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1.welcome{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3rem;
+
+}
+
+p.instruction{
+    color: #fff;
+}
+form.user-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    text-indent: 16px;
+}
+
+button.start{
+    padding: 0;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #2ab12a;
+    cursor: pointer; 
+}
