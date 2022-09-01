@@ -17,14 +17,11 @@ const Quiz = () => {
     const ans = e?.currentTarget.innerText;
     const correctAns = selectedQuiz.answer === ans;
     if (correctAns) {
-      setScore((prev) => prev + 1);
+      setScore(() => score + 1);
       localStorage.setItem("score", JSON.stringify(score));
-      let store = JSON.parse(localStorage.getItem("stor")) || [];
-      store.push(score);
-      localStorage.setItem("store", JSON.stringify(store));
     }
     const ansObj = { ans, correctAns };
-    setSelectedAns((prev) => [...prev, ansObj]);
+    setSelectedAns((selectedAns) => [...selectedAns, ansObj]);
     console.log(correctAns, ans);
   };
 

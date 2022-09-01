@@ -11,14 +11,10 @@ const Home = () => {
     console.log(fullName);
     event.preventDefault();
     if (fullName && fullName.length > 7 && fullName.includes(" ")) {
-      localStorage.setItem("fullName", JSON.stringify(fullName));
-      let store = JSON.parse(localStorage.getItem("store")) || [];
-      store.push(fullName);
-      localStorage.setItem("store", JSON.stringify(store));
-
+      localStorage.setItem("fullName", fullName);
       navigate("/quiz-test/1");
     } else {
-      toast.error("Please input your full name");
+      toast.error("Please input your full name"); 
     }
   };
 
