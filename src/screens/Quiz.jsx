@@ -5,26 +5,24 @@ import "../styles/quiz.css";
 
 const Quiz = (props) => {
   const location = useLocation();
-  let { id } = useParams();
   const navigate = useNavigate();
+  let { id } = useParams();
   const selectedQuiz = quiz[id - 1];
+
   const [selectedAns, setSelectedAns] = React.useState([]);
   const [score, setScore] = React.useState(0);
-
-  console.log(location, id, selectedQuiz.answer);
-
-  // const getScore = () => {
-  //   if (selectedQuiz) {
-  //     setScore((prev) => prev + 1);
-  //   }
-  // };
+  const [seconds, setSeconds] = React.useState(0);
+  const [minute, setMinute] = React.useState(0);
 
   const handleClick = (e) => {
-    // setSelectedAns(e.currentTarget.innerText);
     const ans = e?.currentTarget.innerText;
     const correctAns = selectedQuiz.answer === ans;
     if (correctAns) {
       setScore((prev) => prev + 1);
+      localStorage.setItem("score", JSON.stringify(score));
+      let store = JSON.parse(localStorage.getItem("stor")) || [];
+      store.push(score);
+      localStorage.setItem("store", JSON.stringify(store));
     }
     const ansObj = { ans, correctAns };
     setSelectedAns((prev) => [...prev, ansObj]);
@@ -46,8 +44,25 @@ const Quiz = (props) => {
     });
   };
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds(seconds + 1);
+      if (seconds === 59) {
+        setMinute(minute + 1);
+        setSeconds(0);
+      }
+      if (seconds === 30 && minute === 1) {
+        navigate("/result");
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  });
+
   return (
     <div className="quiz">
+      <h1>
+        {minute}:{seconds}
+      </h1>
       <div key={id}>
         <p className="tag">
           <span>{selectedQuiz.id}. </span>
@@ -82,13 +97,13 @@ const Quiz = (props) => {
         <button
           className="start"
           onClick={() => {
+            handleClick();
+            console.log("id", typeof id);
+            if (id === "5") {
+              navigate("/result");
+            }
             if (id < 5) {
               navigate(`/quiz-test/${++id}`);
-            }
-
-            handleClick();
-            if (id === 5) {
-              console.log("/Hello");
             }
           }}
         >
