@@ -3,8 +3,7 @@ import quiz from "../quiz.json";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "../styles/quiz.css";
 
-const Quiz = (props) => {
-  const location = useLocation();
+const Quiz = () => {
   const navigate = useNavigate();
   let { id } = useParams();
   const selectedQuiz = quiz[id - 1];
